@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#151d1d">
+  <meta name="theme-color" content="#101b20">
   <meta name="description" content="Какие процессы строительной компании можно автоматизировать: документы, объёмы, ресурсы, контроль и отчётность. Где помогают скрипты, где ИИ, а где решение остаётся за человеком.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Автоматизация строительных процессов">
   <meta property="og:description" content="Документы, объёмы, ресурсы и контроль — возможности автоматизации без лишних обещаний.">
   <meta property="og:url" content="https://sa-n4e-zzz.github.io/construction-automation-presentation/">
   <title>Автоматизация строительных процессов</title>
+  <link rel="preload" href="fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
@@ -25,7 +28,7 @@
         <a href="#directions">Направления</a>
         <a href="#roles" aria-label="Роли технологий"><span class="nav-full">Роли технологий</span><span class="nav-short" aria-hidden="true">Роли</span></a>
       </nav>
-      <span class="header-index" aria-hidden="true">05 областей</span>
+      <span class="header-index" aria-hidden="true">18 ЗАДАЧ / 05 НАПРАВЛЕНИЙ</span>
     </div>
   </header>
 
@@ -34,19 +37,20 @@
       <div class="shell hero-grid">
         <div class="hero-copy">
           <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Возможности для строительной компании</p>
-          <h1 id="hero-title">Данные стройки<br><em>должны работать.</em></h1>
-          <p class="hero-lead">Документы, объёмы, ресурсы и контроль можно связать в понятные процессы. Показываем, где помогают правила и скрипты, где уместен ИИ, а где решение остаётся за специалистом.</p>
+          <h1 id="hero-title">Данные<br><em>стройки</em><br>без хаоса<span class="hero-dot">.</span></h1>
+          <p class="hero-lead">Документы, объёмы, ресурсы и контроль можно связать в понятные процессы. Показываем, какие задачи подходят для автоматизации и где решение остаётся за человеком.</p>
           <a class="text-link hero-link" href="#directions">Смотреть направления <span aria-hidden="true">↘</span></a>
           <p class="hero-note">Карта возможностей, а не описание готовой системы. Состав решения зависит от процессов и данных компании.</p>
         </div>
         <div class="hero-map" role="group" aria-label="Пять областей строительных процессов">
-          <p class="map-caption">Рабочие области <span> / 05</span></p>
+          <p class="map-caption">КАРТА ПРОЦЕССОВ <span>18 ЗАДАЧ</span></p>
+          <div class="map-visual" aria-hidden="true"><span class="map-orbit"></span><span class="map-center">18<small>ЗАДАЧ</small></span><span class="map-cross map-cross-a"></span><span class="map-cross map-cross-b"></span></div>
           <ol class="map-list">
-            <li><span>01</span><strong>Документы</strong></li>
-            <li><span>02</span><strong>Объёмы</strong></li>
-            <li><span>03</span><strong>Ресурсы</strong></li>
-            <li><span>04</span><strong>Контроль</strong></li>
-            <li><span>05</span><strong>Отчётность</strong></li>
+            <li><span>01</span><strong>Документы</strong><small>5 задач</small></li>
+            <li><span>02</span><strong>Объёмы</strong><small>2 задачи</small></li>
+            <li><span>03</span><strong>Ресурсы</strong><small>6 задач</small></li>
+            <li><span>04</span><strong>Контроль</strong><small>4 задачи</small></li>
+            <li><span>05</span><strong>Отчётность</strong><small>1 задача</small></li>
           </ol>
           <p class="map-foot">От записи на объекте — к информации для решения.</p>
         </div>
@@ -58,12 +62,12 @@
       <div class="shell">
         <div class="section-intro" data-reveal>
           <p class="section-kicker">01 / Направления</p>
-          <h2 id="directions-title">Что можно<br><em>автомати&shy;зировать</em></h2>
-          <p>Пять рабочих областей объединяют задачи из исходного перечня. Откройте направление, чтобы увидеть его состав. Это редакционная группировка возможных задач, а не готовый набор функций.</p>
+          <h2 id="directions-title">Что можно<br><em>взять в работу</em></h2>
+          <p>Мы сгруппировали 18 задач из исходного перечня в пять направлений. Откройте область, чтобы увидеть полный состав. Это варианты для обсуждения, а не готовые функции.</p>
         </div>
 
-        <div class="directions-list">
-          <details class="direction" data-reveal>
+        <div class="directions-list direction-grid">
+          <details class="direction direction-documents" id="documents" data-reveal>
             <summary>
               <span class="direction-number">01</span>
               <span class="direction-copy"><strong>Документы и архив</strong><span>Реестры, версии, согласование и поиск файлов.</span></span>
@@ -81,7 +85,7 @@
             </div>
           </details>
 
-          <details class="direction" data-reveal>
+          <details class="direction direction-volumes" id="volumes" data-reveal>
             <summary>
               <span class="direction-number">02</span>
               <span class="direction-copy"><strong>Объёмы и закрытие</strong><span>Учёт выполненных работ и подготовка данных к закрытию.</span></span>
@@ -96,7 +100,7 @@
             </div>
           </details>
 
-          <details class="direction" data-reveal>
+          <details class="direction direction-resources" id="resources" data-reveal>
             <summary>
               <span class="direction-number">03</span>
               <span class="direction-copy"><strong>Ресурсы и экономика</strong><span>Движение материалов и данные о затратах по объекту.</span></span>
@@ -115,7 +119,7 @@
             </div>
           </details>
 
-          <details class="direction" data-reveal>
+          <details class="direction direction-control" id="control" data-reveal>
             <summary>
               <span class="direction-number">04</span>
               <span class="direction-copy"><strong>Контроль на площадке</strong><span>Замечания, испытания и отклонения от графика.</span></span>
@@ -132,7 +136,7 @@
             </div>
           </details>
 
-          <details class="direction" data-reveal>
+          <details class="direction direction-reporting" id="reporting" data-reveal>
             <summary>
               <span class="direction-number">05</span>
               <span class="direction-copy"><strong>Картина для руководителя</strong><span>Сводное состояние объектов и вопросы, требующие внимания.</span></span>
@@ -151,7 +155,7 @@
       <div class="shell">
         <div class="roles-heading" data-reveal>
           <p class="section-kicker">02 / Подход</p>
-          <h2 id="roles-title">Не вся автомати&shy;зация<br><em>должна быть ИИ.</em></h2>
+          <h2 id="roles-title">У каждой задачи<br><em>свой инструмент.</em></h2>
           <p>Технологию выбирают по задаче. Повторяемый порядок действий, работа с неструктурированным текстом и ответственное решение требуют разных ролей.</p>
         </div>
         <div class="roles-grid">
@@ -193,7 +197,7 @@
       <div class="shell closing-grid" data-reveal>
         <p class="section-kicker">04 / Следующий шаг</p>
         <div>
-          <h2 id="next-title">Начать с задач,<br><em>а не с технологий.</em></h2>
+          <h2 id="next-title">Начать с задач.<br><em>Технологии — потом.</em></h2>
           <p>Для предметного разговора достаточно выбрать приоритетные процессы и понять, какие данные уже ведутся в компании. После этого можно определить границы первого решения.</p>
           <p class="closing-note">Перечень на странице показывает возможности. Функции и способ внедрения определяются только после изучения процесса.</p>
         </div>

@@ -1,96 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <meta name="description" content="Рабочая концепция автоматизации процессов строительной компании: PDF-презентация из 7 страниц.">
-  <title>Документы и данные стройки под контролем</title>
-  <style>
-    :root {
-      --bg: #F5F3EE;
-      --text: #142A38;
-      --accent: #C68148;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      padding: 2rem 1.25rem 3.5rem;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 17px;
-      line-height: 1.6;
-    }
-    .wrap { max-width: 48rem; margin: 0 auto; }
-    h1 {
-      margin: 0 0 1rem;
-      font-size: 1.75rem;
-      line-height: 1.25;
-    }
-    .lead { margin: 0 0 1.75rem; max-width: 38rem; }
-    .actions { margin: 0 0 0.75rem; }
-    a {
-      color: var(--text);
-      text-decoration: underline;
-      text-underline-offset: 0.18em;
-    }
-    a:hover { text-decoration-thickness: 2px; }
-    a:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
-    a.primary {
-      display: inline-block;
-      padding: 0.7rem 1.25rem;
-      border: 2px solid var(--text);
-      color: var(--text);
-      font-weight: 700;
-      text-decoration: none;
-      line-height: 1.3;
-    }
-    a.primary:hover { text-decoration: underline; }
-    .meta { margin: 0 0 2.25rem; font-size: 0.9375rem; }
-    hr {
-      margin: 0 0 2rem;
-      border: 0;
-      border-top: 1px solid rgba(20, 42, 56, 0.25);
-    }
-    h2 { margin: 0 0 0.75rem; font-size: 1.125rem; }
-    .preview img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border: 1px solid rgba(20, 42, 56, 0.25);
-    }
-    .preview { margin: 0; }
-    .preview a { display: block; }
-    .preview figcaption { margin-top: 0.65rem; font-size: 0.875rem; }
-    @media (max-width: 40em) {
-      body { padding: 1.5rem 1rem 2.5rem; font-size: 16px; }
-      h1 { font-size: 1.5rem; }
-      a.primary { display: block; text-align: center; }
-    }
-  </style>
+  <meta name="theme-color" content="#151d1d">
+  <meta name="description" content="Какие процессы строительной компании можно автоматизировать: документы, объёмы, ресурсы, контроль и отчётность. Где помогают скрипты, где ИИ, а где решение остаётся за человеком.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Автоматизация строительных процессов">
+  <meta property="og:description" content="Документы, объёмы, ресурсы и контроль — возможности автоматизации без лишних обещаний.">
+  <meta property="og:url" content="https://sa-n4e-zzz.github.io/construction-automation-presentation/">
+  <title>Автоматизация строительных процессов</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Документы и данные стройки под контролем</h1>
-      <p class="lead">Рабочая концепция автоматизации процессов строительной компании: от разбора одного вида работ до пилота реестра исполнительных документов.</p>
-    </header>
-    <main>
-      <p class="actions"><a class="primary" href="presentation.pdf">Открыть или скачать PDF</a></p>
-      <p class="meta">PDF, 7 страниц.</p>
-      <hr>
-      <section aria-labelledby="preview-heading">
-        <h2 id="preview-heading">Обложка презентации</h2>
-        <figure class="preview">
-          <a href="presentation.pdf">
-            <img src="preview.jpg" alt="Обложка презентации «Документы и данные стройки под контролем», PDF, 7 страниц" width="1200" height="675">
-          </a>
-          <figcaption>Нажмите на обложку, чтобы открыть PDF.</figcaption>
-        </figure>
-      </section>
-    </main>
-  </div>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <header class="site-header">
+    <div class="shell header-row">
+      <a class="brand" href="#top" aria-label="СТРОЙКА / ДАННЫЕ — к началу страницы">
+        <span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand-name">СТРОЙКА<span class="brand-slash"> / </span>ДАННЫЕ</span>
+      </a>
+      <nav class="header-nav" aria-label="Основная навигация">
+        <a href="#directions">Направления</a>
+        <a href="#roles" aria-label="Роли технологий"><span class="nav-full">Роли технологий</span><span class="nav-short" aria-hidden="true">Роли</span></a>
+      </nav>
+      <span class="header-index" aria-hidden="true">05 областей</span>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Возможности для строительной компании</p>
+          <h1 id="hero-title">Данные стройки<br><em>должны работать.</em></h1>
+          <p class="hero-lead">Документы, объёмы, ресурсы и контроль можно связать в понятные процессы. Показываем, где помогают правила и скрипты, где уместен ИИ, а где решение остаётся за специалистом.</p>
+          <a class="text-link hero-link" href="#directions">Смотреть направления <span aria-hidden="true">↘</span></a>
+          <p class="hero-note">Карта возможностей, а не описание готовой системы. Состав решения зависит от процессов и данных компании.</p>
+        </div>
+        <div class="hero-map" role="group" aria-label="Пять областей строительных процессов">
+          <p class="map-caption">Рабочие области <span> / 05</span></p>
+          <ol class="map-list">
+            <li><span>01</span><strong>Документы</strong></li>
+            <li><span>02</span><strong>Объёмы</strong></li>
+            <li><span>03</span><strong>Ресурсы</strong></li>
+            <li><span>04</span><strong>Контроль</strong></li>
+            <li><span>05</span><strong>Отчётность</strong></li>
+          </ol>
+          <p class="map-foot">От записи на объекте — к информации для решения.</p>
+        </div>
+      </div>
+      <div class="hero-bottom" aria-hidden="true"><span>Строительные процессы</span><span>Прокрутите вниз ↓</span></div>
+    </section>
+
+    <section class="directions-section" id="directions" aria-labelledby="directions-title">
+      <div class="shell">
+        <div class="section-intro" data-reveal>
+          <p class="section-kicker">01 / Направления</p>
+          <h2 id="directions-title">Что можно<br><em>автомати&shy;зировать</em></h2>
+          <p>Пять рабочих областей объединяют задачи из исходного перечня. Откройте направление, чтобы увидеть его состав. Это редакционная группировка возможных задач, а не готовый набор функций.</p>
+        </div>
+
+        <div class="directions-list">
+          <details class="direction" data-reveal>
+            <summary>
+              <span class="direction-number">01</span>
+              <span class="direction-copy"><strong>Документы и архив</strong><span>Реестры, версии, согласование и поиск файлов.</span></span>
+              <span class="direction-plus" aria-hidden="true"></span>
+            </summary>
+            <div class="direction-body">
+              <p class="direction-label">Возможные процессы</p>
+              <ul>
+                <li>Исполнительная документация</li>
+                <li>Общий журнал работ</li>
+                <li>Согласование документов</li>
+                <li>Геодезия и исполнительные схемы</li>
+                <li>Архив и права доступа</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="direction" data-reveal>
+            <summary>
+              <span class="direction-number">02</span>
+              <span class="direction-copy"><strong>Объёмы и закрытие</strong><span>Учёт выполненных работ и подготовка данных к закрытию.</span></span>
+              <span class="direction-plus" aria-hidden="true"></span>
+            </summary>
+            <div class="direction-body">
+              <p class="direction-label">Возможные процессы</p>
+              <ul>
+                <li>Накопительные ведомости</li>
+                <li>Акты выполненных работ и справки о стоимости (КС-2 / КС-3)</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="direction" data-reveal>
+            <summary>
+              <span class="direction-number">03</span>
+              <span class="direction-copy"><strong>Ресурсы и экономика</strong><span>Движение материалов и данные о затратах по объекту.</span></span>
+              <span class="direction-plus" aria-hidden="true"></span>
+            </summary>
+            <div class="direction-body">
+              <p class="direction-label">Возможные процессы</p>
+              <ul>
+                <li>Списание материалов</li>
+                <li>Себестоимость объекта</li>
+                <li>Реестр договоров</li>
+                <li>Заявки и снабжение</li>
+                <li>Техника и механизмы</li>
+                <li>Персонал и затраты на оплату труда</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="direction" data-reveal>
+            <summary>
+              <span class="direction-number">04</span>
+              <span class="direction-copy"><strong>Контроль на площадке</strong><span>Замечания, испытания и отклонения от графика.</span></span>
+              <span class="direction-plus" aria-hidden="true"></span>
+            </summary>
+            <div class="direction-body">
+              <p class="direction-label">Возможные процессы</p>
+              <ul>
+                <li>Входной контроль материалов</li>
+                <li>Лабораторный контроль</li>
+                <li>Замечания строительного контроля</li>
+                <li>План-график работ</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="direction" data-reveal>
+            <summary>
+              <span class="direction-number">05</span>
+              <span class="direction-copy"><strong>Картина для руководителя</strong><span>Сводное состояние объектов и вопросы, требующие внимания.</span></span>
+              <span class="direction-plus" aria-hidden="true"></span>
+            </summary>
+            <div class="direction-body">
+              <p class="direction-label">Возможный процесс</p>
+              <ul><li>Отчётность руководству</li></ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="roles-section" id="roles" aria-labelledby="roles-title">
+      <div class="shell">
+        <div class="roles-heading" data-reveal>
+          <p class="section-kicker">02 / Подход</p>
+          <h2 id="roles-title">Не вся автомати&shy;зация<br><em>должна быть ИИ.</em></h2>
+          <p>Технологию выбирают по задаче. Повторяемый порядок действий, работа с неструктурированным текстом и ответственное решение требуют разных ролей.</p>
+        </div>
+        <div class="roles-grid">
+          <article class="role" data-reveal>
+            <span class="role-index">01 / Определённые правила</span>
+            <h3>Скрипты<br>и интеграции</h3>
+            <p>Могут вести реестр, собирать данные, проверять заданные поля и напоминать о следующих действиях.</p>
+          </article>
+          <article class="role" data-reveal>
+            <span class="role-index">02 / Неструктурированные данные</span>
+            <h3>ИИ<br>как помощник</h3>
+            <p>Может предложить тип документа, извлечь реквизиты, найти фрагмент в архиве или подготовить черновик сводки.</p>
+          </article>
+          <article class="role" data-reveal>
+            <span class="role-index">03 / Ответственность</span>
+            <h3>Решение<br>за человеком</h3>
+            <p>Специалист проверяет критичные документы, утверждает результат и разбирает исключения.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="example-section" id="example" aria-labelledby="example-title">
+      <div class="shell example-grid">
+        <div class="example-heading" data-reveal>
+          <p class="section-kicker">03 / Пример</p>
+          <h2 id="example-title">Один документ.<br><em>Три роли.</em></h2>
+          <p>Иллюстрация подхода, не действующая система и не описание процессов конкретного клиента.</p>
+        </div>
+        <ol class="example-flow" aria-label="Как могут распределяться задачи при работе с документом">
+          <li data-reveal><span>Правило</span><strong>Фиксирует документ и его движение</strong></li>
+          <li data-reveal><span>ИИ-помощник</span><strong>Помогает найти и прочитать нужное</strong></li>
+          <li data-reveal><span>Специалист</span><strong>Проверяет и принимает решение</strong></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="closing-section" id="next" aria-labelledby="next-title">
+      <div class="shell closing-grid" data-reveal>
+        <p class="section-kicker">04 / Следующий шаг</p>
+        <div>
+          <h2 id="next-title">Начать с задач,<br><em>а не с технологий.</em></h2>
+          <p>Для предметного разговора достаточно выбрать приоритетные процессы и понять, какие данные уже ведутся в компании. После этого можно определить границы первого решения.</p>
+          <p class="closing-note">Перечень на странице показывает возможности. Функции и способ внедрения определяются только после изучения процесса.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-row">
+      <span>Автоматизация строительных процессов</span>
+      <a href="presentation.pdf">Ранее подготовленная PDF-концепция</a>
+      <a href="#top">Наверх ↑</a>
+    </div>
+  </footer>
 </body>
 </html>
